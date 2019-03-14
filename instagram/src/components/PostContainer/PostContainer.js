@@ -13,6 +13,11 @@ class PostContainer extends React.Component {
           <h2>{this.props.content.username}</h2>
         </div>
         <img className='postMainImg' src={this.props.content.imageUrl} alt='post main img'/>
+        <div className='likeAndCommentIcons'>
+          <i className="far fa-heart"></i>
+          <i className="far fa-comment"></i>
+        </div>
+        <h3 className='likes'>{this.props.content.likes} likes</h3>
         <CommentSection commentList={this.props.content.comments} />
       </div>
     )

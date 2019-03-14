@@ -1,3 +1,16 @@
 .commentSection {
-  background-color: grey;
+  padding: 0 20px;
+}
+
+.comment {
+  display: flex;
+}
+
+.commentUser {
+
+}
+
+.commentText {
+  margin: 0;
+  padding: 10px 0;
 }
