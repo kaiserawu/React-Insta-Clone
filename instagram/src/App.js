@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer'
+import SearchBar from './components/SearchBar/SearchBar';
+import PostContainer from './components/PostContainer/PostContainer';
 
 import './App.css';
 
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <SearchBar />
         <div className="postList">
           {this.state.posts.map(post => {
             this.postId++;

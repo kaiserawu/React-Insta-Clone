@@ -1,0 +1,49 @@
+#header {
+  padding: 25px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid lightgrey;
+}
+
+.logoAndName {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 50px;
+}
+
+.verticalLine {
+  height: 50px;
+  margin: 0 30px;
+  border-left: 1px solid black;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 45px;
+  letter-spacing: 1px;
+  font-family: 'Grand Hotel', cursive;
+}
+
+.searchBar {
+  text-align: center;
+  width: 320px;
+  height: 40px;
+  font-size: 20px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+.headerIcons {
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.headerIcons i {
+  margin: 0 20px;
+}
