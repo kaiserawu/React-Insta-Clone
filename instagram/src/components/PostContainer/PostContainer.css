@@ -1,6 +1,6 @@
 .postContainer {
   width: 42%;
-  margin: 0 auto;
+  margin: 20px auto;
   border: 1px solid lightgrey;
 }
 
@@ -38,4 +38,27 @@ h2 {
   margin: 0 20px;
   padding: 0;
   font-size: 14px;
+}
+
+.timestamp {
+  margin: 5px 0 10px 20px;
+  padding: 0;
+  font-weight: normal;
+  color: grey;
+  font-size: 10px;
+}
+
+hr {
+  border-color: lightgrey;
+  margin: 0 20px;
+}
+
+.commentBox {
+  height: 30px;
+  width: 95%;
+  font-size: 14px;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  margin-left: 20px;
 }

@@ -19,6 +19,9 @@ class PostContainer extends React.Component {
         </div>
         <h3 className='likes'>{this.props.content.likes} likes</h3>
         <CommentSection commentList={this.props.content.comments} />
+        <h4 className='timestamp'>{this.props.content.timestamp}</h4>
+        <hr/>
+        <input className='commentBox' type='text' placeholder='Add a comment...'/>
       </div>
     )
   }

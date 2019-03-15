@@ -16,7 +16,6 @@ class CommentSection extends React.Component {
           this.commentId++;
           return (<Comment key={this.commentId} username={comment.username} text={comment.text} />)
         })}
-        <input type='text' placeholder='Add a comment...'/>
       </div>
     )
   }
