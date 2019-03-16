@@ -18,10 +18,10 @@ class PostContainer extends React.Component {
           <i className="far fa-comment"></i>
         </div>
         <h3 className='likes'>{this.props.content.likes} likes</h3>
-        <CommentSection commentList={this.props.content.comments} />
-        <h4 className='timestamp'>{this.props.content.timestamp}</h4>
+        <CommentSection commentList={this.props.content.comments} timestamp={this.props.content.timestamp}/>
+        {/* <h4 className='timestamp'>{this.props.content.timestamp}</h4>
         <hr/>
-        <input className='commentBox' type='text' placeholder='Add a comment...'/>
+        <input className='commentBox' type='text' placeholder='Add a comment...'/> */}
       </div>
     )
   }

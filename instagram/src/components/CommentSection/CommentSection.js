@@ -26,6 +26,9 @@ class CommentSection extends React.Component {
           this.commentId++;
           return (<Comment key={this.commentId} username={comment.username} text={comment.text} />)
         })}
+        <h4 className='timestamp'>{this.props.timestamp}</h4>
+        <hr/>
+        <input className='commentBox' type='text' placeholder='Add a comment...'/>
       </div>
     )
   }

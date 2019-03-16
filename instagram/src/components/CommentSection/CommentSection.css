@@ -15,3 +15,25 @@
   margin: 0;
   padding: 8px 0;
 }
+
+.timestamp {
+  margin: 5px 0 10px 0;
+  padding: 0;
+  font-weight: normal;
+  color: grey;
+  font-size: 10px;
+}
+
+hr {
+  border-color: lightgrey;
+}
+
+.commentBox {
+  height: 30px;
+  width: 95%;
+  font-size: 14px;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  margin-left: 0;
+}
