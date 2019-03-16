@@ -27,8 +27,7 @@ class App extends Component {
         <SearchBar />
         <div className="postList">
           {this.state.posts.map(post => {
-            this.postId++;
-            return (<PostContainer key={this.postId} content={post} />)
+            return (<PostContainer key={this.postId++} content={post} />)
           })}
         </div>
       </div>
