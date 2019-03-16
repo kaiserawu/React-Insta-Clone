@@ -3,19 +3,6 @@ import React from 'react';
 import './SearchBar.css';
 
 class SearchBar extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      searchInput: ''
-    }
-  }
-
-  handleInput = e => {
-    this.setState({
-      searchInput: e.target.value
-    })
-  }
-
   render() {
     return (
       <div id='header'>
@@ -24,7 +11,9 @@ class SearchBar extends React.Component {
           <div className='verticalLine'></div>
           <h1>Instagram</h1>
         </div>
-        <input className='searchBar' type='text' placeholder='Search' value={this.state.searchInput} onChange={this.handleInput}/>
+        <form onSubmit={this.props.handleSubmit}>
+          <input className='searchBar' type='text' placeholder='Search' value={this.props.searchInput} onChange={this.props.handleInput}/>
+        </form>
         <div className='headerIcons'>
           <i className="far fa-compass"></i>
           <i className="far fa-heart"></i>

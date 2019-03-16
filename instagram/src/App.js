@@ -11,22 +11,40 @@ class App extends Component {
     super(props);
     this.postId = 0;
     this.state = {
-      posts: []
+      posts: [],
+      activePosts: [],
+      searchInput: ''
     }
   }
 
   componentDidMount() {
     this.setState({
-      posts: DummyData
+      posts: DummyData,
+      activePosts: DummyData
     });
+  }
+
+  handleSearchInput = e => {
+    this.setState({
+      searchInput: e.target.value
+    })
+  }
+
+  handleSearchSubmit = e => {
+    e.preventDefault();
+    this.setState(prevState => {
+      return {
+        activePosts: prevState.posts.filter(post => post.username === prevState.searchInput || prevState.searchInput === '')
+      }
+    })
   }
   
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar searchInput={this.state.searchInput} handleInput={this.handleSearchInput} handleSubmit={this.handleSearchSubmit}/>
         <div className="postList">
-          {this.state.posts.map(post => {
+          {this.state.activePosts.map(post => {
             return (<PostContainer key={this.postId++} content={post} />)
           })}
         </div>
