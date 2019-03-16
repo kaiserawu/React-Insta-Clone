@@ -8,7 +8,17 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.commentId = 0;
+    this.state = {
+      commentList: []
+    }
   }
+
+  componentDidMount() {
+    this.setState({
+      commentList: this.props.commentList
+    });
+  }
+
   render() {
     return (
       <div className='commentSection'>

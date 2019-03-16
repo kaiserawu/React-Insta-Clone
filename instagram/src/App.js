@@ -11,8 +11,14 @@ class App extends Component {
     super(props);
     this.postId = 0;
     this.state = {
-      posts: DummyData
+      posts: []
     }
+  }
+
+  componentDidMount() {
+    this.setState({
+      posts: DummyData
+    });
   }
   
   render() {
