@@ -5,6 +5,27 @@ import CommentSection from '../CommentSection/CommentSection';
 import './PostContainer.css';
 
 class PostContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      likes: 0
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      likes: this.props.content.likes
+    })
+  }
+
+  handleLike = e => {
+    this.setState(prevState => {
+      return {
+        likes: ++prevState.likes
+      }
+    })
+  }
+
   render () {
     return (
       <div className='postContainer'>
@@ -14,10 +35,10 @@ class PostContainer extends React.Component {
         </div>
         <img className='postMainImg' src={this.props.content.imageUrl} alt='post main img'/>
         <div className='likeAndCommentIcons'>
-          <i className="far fa-heart"></i>
+          <i className="far fa-heart" onClick={this.handleLike}></i>
           <i className="far fa-comment"></i>
         </div>
-        <h3 className='likes'>{this.props.content.likes} likes</h3>
+        <h3 className='likes'>{this.state.likes} likes</h3>
         <CommentSection commentList={this.props.content.comments} timestamp={this.props.content.timestamp}/>
       </div>
     )
