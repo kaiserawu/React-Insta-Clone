@@ -17,22 +17,24 @@ class LoginPage extends React.Component {
     })
   }
 
-  login = () => {
+  login = e => {
+    console.log('logging in');
     localStorage.setItem('username', this.state.username);
   }
 
   render() {
     return (
       <div className='Login'>
-        <form onSubmit={login}>
-          <label for='username'>Username</label>
+        <form onSubmit={this.login}>
+          <label htmlFor='username'>Username</label>
           <input type='text' name='username' id='username' value={this.state.username} onChange={this.handleText} />
-          <label for='password'>Password</label>
+          <label htmlFor='password'>Password</label>
           <input type='password' name='password' id='password' value={this.state.password} onChange={this.handleText} />
+          <input type='submit' />
         </form>
       </div>
     )
   }
 }
 
-export default Login;
+export default LoginPage;
