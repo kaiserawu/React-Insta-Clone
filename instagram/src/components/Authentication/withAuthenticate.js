@@ -6,18 +6,22 @@ const withAuthenticate = Component => Component2 => {
       constructor(props) {
         super(props);
         this.state = {
-          loggedIn: false
+          loggedIn: false,
+          username: ''
         }
       }
 
       componentDidMount() {
-        if (localStorage.getItem('username') !== null) {
+        const localStoredUser = localStorage.getItem('username');
+        if (localStoredUser !== null) {
           this.setState({
-            loggedIn: true
+            loggedIn: true,
+            username: localStoredUser
           })
         } else {
           this.setState({
-            loggedIn: false
+            loggedIn: false,
+            username: ''
           })
         }
 
@@ -26,7 +30,7 @@ const withAuthenticate = Component => Component2 => {
       render() {
         if (this.state.loggedIn) {
           return (
-            <Component />
+            <Component currentUser={this.state.username} />
           )
         } else {
           return (

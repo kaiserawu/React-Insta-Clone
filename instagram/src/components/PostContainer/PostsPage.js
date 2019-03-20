@@ -47,7 +47,7 @@ class PostsPage extends Component {
         <SearchBar searchInput={this.state.searchInput} handleInput={this.handleSearchInput} handleSubmit={this.handleSearchSubmit}/>
         <div className="postList">
           {this.state.activePosts.map(post => {
-            return (<PostContainer key={this.postId++} content={post} />)
+            return (<PostContainer key={this.postId++} content={post} currentUser={this.props.currentUser} />)
           })}
         </div>
         <button className='logoutButton' onClick={this.logout}>Logout</button>

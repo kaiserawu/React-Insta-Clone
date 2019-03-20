@@ -33,7 +33,7 @@ class CommentSection extends React.Component {
       console.log('Adding Comment');
       return {
         commentList: [...prevState.commentList, {
-          username: 'fakeUsername',
+          username: this.props.currentUser,
           text: prevState.newComment
         }],
         newComment: ''

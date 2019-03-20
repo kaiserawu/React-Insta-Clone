@@ -39,7 +39,7 @@ class PostContainer extends React.Component {
           <i className="far fa-comment"></i>
         </div>
         <h3 className='likes'>{this.state.likes} likes</h3>
-        <CommentSection commentList={this.props.content.comments} timestamp={this.props.content.timestamp}/>
+        <CommentSection commentList={this.props.content.comments} timestamp={this.props.content.timestamp} currentUser={this.props.currentUser} />
       </div>
     )
   }
