@@ -10,7 +10,7 @@ class LoginPage extends React.Component {
       password: ''
     }
   }
-
+  
   handleText = e => {
     this.setState({
       [e.target.name]: e.target.value

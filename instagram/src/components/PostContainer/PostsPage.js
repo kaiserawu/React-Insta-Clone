@@ -35,6 +35,11 @@ class PostsPage extends Component {
       }
     })
   }
+
+  logout = () => {
+    localStorage.clear();
+    window.location.reload();
+  }
   
   render() {
     return (
@@ -45,6 +50,7 @@ class PostsPage extends Component {
             return (<PostContainer key={this.postId++} content={post} />)
           })}
         </div>
+        <button className='logoutButton' onClick={this.logout}>Logout</button>
       </div>
     );
   }
