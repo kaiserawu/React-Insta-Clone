@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import DummyData from '../../dummy-data';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
+
+const PostsPageDiv = styled.div``;
+
+const PostListDiv = styled.div``;
+
+const LogoutButton = styled.button`
+  height: 50px;
+  width: 200px;
+  position:fixed;
+  bottom: 20px;
+  right: 20px;
+`;
 
 class PostsPage extends Component {
   constructor(props) {
@@ -43,15 +56,15 @@ class PostsPage extends Component {
   
   render() {
     return (
-      <div className="postsPage">
+      <PostsPageDiv>
         <SearchBar searchInput={this.state.searchInput} handleInput={this.handleSearchInput} handleSubmit={this.handleSearchSubmit}/>
-        <div className="postList">
+        <PostListDiv>
           {this.state.activePosts.map(post => {
             return (<PostContainer key={this.postId++} content={post} currentUser={this.props.currentUser} />)
           })}
-        </div>
-        <button className='logoutButton' onClick={this.logout}>Logout</button>
-      </div>
+        </PostListDiv>
+        <LogoutButton onClick={this.logout}>Logout</LogoutButton>
+      </PostsPageDiv>
     );
   }
 }
