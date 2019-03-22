@@ -1,8 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Comment from './Comment';
 
-import './CommentSection.css';
+const CommentSectionDiv = styled.div`
+  padding: 0 20px;
+`;
+
+const TimestampH4 = styled.div`
+  margin: 5px 0 10px 0;
+  padding: 0;
+  font-weight: normal;
+  color: grey;
+  font-size: 10px;
+`;
+
+const HR = styled.hr`
+  border-color: lightgrey;
+`;
+
+const CommentBoxInput = styled.input`
+  height: 30px;
+  width: 95%;
+  font-size: 14px;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  margin-left: 0;
+`;
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -43,17 +68,16 @@ class CommentSection extends React.Component {
 
   render() {
     return (
-      <div className='commentSection'>
+      <CommentSectionDiv>
         {this.state.commentList.map(comment => {
-          this.commentId++;
-          return (<Comment key={this.commentId} username={comment.username} text={comment.text} />)
+          return (<Comment key={this.commentId++} username={comment.username} text={comment.text} />)
         })}
-        <h4 className='timestamp'>{this.props.timestamp}</h4>
-        <hr/>
+        <TimestampH4>{this.props.timestamp}</TimestampH4>
+        <HR/>
         <form onSubmit={this.addNewComment}>
-          <input className='commentBox' type='text' placeholder='Add a comment...' value={this.state.newComment} onChange={this.handleText} />
+          <CommentBoxInput type='text' placeholder='Add a comment...' value={this.state.newComment} onChange={this.handleText} />
         </form>
-      </div>
+      </CommentSectionDiv>
     )
   }
 }
